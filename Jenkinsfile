@@ -21,7 +21,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh ''' 
-                    cd spring-boot-demo
+                    cd spring-boot-app
                     mvn clean package
                 '''
             }
