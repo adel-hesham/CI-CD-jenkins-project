@@ -20,7 +20,10 @@ pipeline {
 
         stage('Build') {
             steps {
-                sh 'mvn clean package'
+                sh ''' 
+                    cd spring-boot-demo
+                    mvn clean package
+                '''
             }
         }
 
