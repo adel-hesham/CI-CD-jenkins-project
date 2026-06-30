@@ -32,8 +32,8 @@ pipeline {
                 withCredentials([string(credentialsId: 'sonar-token', variable: 'SONAR_TOKEN')]) {
                     sh '''
                         mvn sonar:sonar \
-                          -Dsonar.projectKey=spring-boot-demo \
-                          -Dsonar.projectName=spring-boot-demo \
+                          -Dsonar.projectKey=spring-boot-app \
+                          -Dsonar.projectName=spring-boot-app \
                           -Dsonar.host.url=$SONAR_URL \
                           -Dsonar.token=$SONAR_TOKEN
                     '''
@@ -45,7 +45,7 @@ pipeline {
             steps {
                 withCredentials([
                     usernamePassword(
-                        credentialsId: 'nexus-creds',
+                        credentialsId: 'nexus-cred',
                         usernameVariable: 'NEXUS_USER',
                         passwordVariable: 'NEXUS_PASS'
                     )
