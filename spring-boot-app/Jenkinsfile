@@ -109,10 +109,15 @@ pipeline {
     }
 
     post {
+        success {
+        mail to: 'adelelnimrwhats@gmail.com',
+             subject: "Pipeline Succeeded: ${currentBuild.fullDisplayName}",
+             body: "Build succeeded! Check console output at ${env.BUILD_URL}"
+            }
         failure {
             mail to: 'adelelnimrwhats@gmail.com',
                  subject: "Pipeline Failed: ${currentBuild.fullDisplayName}",
                  body: "Build failed. Check console output at ${env.BUILD_URL}"
-        }
+            }
     }
 }
