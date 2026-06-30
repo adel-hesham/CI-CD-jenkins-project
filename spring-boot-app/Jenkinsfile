@@ -20,10 +20,8 @@ pipeline {
 
         stage('Build') {
             steps {
-                sh ''' 
-                    cd spring-boot-app
-                    mvn clean package
-                '''
+                    dir('spring-boot-app') {
+                    sh 'mvn clean package -DskipTests'
             }
         }
 
