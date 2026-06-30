@@ -5,9 +5,9 @@ pipeline {
         SONAR_URL = 'http://localhost:9000'
         NEXUS_URL = 'http://localhost:8081/repository/java-repo/'
         NEXUS_SETTINGS_ID = 'd2093c9d-1921-46ce-bc0e-5c19c03900ad'
-        AWS_ACCOUNT_ID = 'YOUR_ACCOUNT_ID'
+        AWS_ACCOUNT_ID = '579920977690'
         AWS_REGION = 'us-east-1'
-        ECR_REPOSITORY = 'YOUR_ECR_REPOSITORY'
+        ECR_REPOSITORY = 'adelrepo'
     }
 
     triggers {
