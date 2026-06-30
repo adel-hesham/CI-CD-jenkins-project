@@ -59,7 +59,7 @@ pipeline {
                             sh '''
                                 mvn deploy -DskipTests \
                                     --settings $MAVEN_SETTINGS \
-                                    -DaltDeploymentRepository=nexus::default::$NEXUS_URL
+                                    -DaltDeploymentRepository=java-repo::default::$NEXUS_URL
                             '''
                         }
                     }
@@ -110,7 +110,7 @@ pipeline {
 
     post {
         failure {
-            mail to: 'your-real-email@gmail.com',
+            mail to: 'adelelnimrwhats@gmail.com',
                  subject: "Pipeline Failed: ${currentBuild.fullDisplayName}",
                  body: "Build failed. Check console output at ${env.BUILD_URL}"
         }
